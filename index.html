@@ -64,6 +64,7 @@
       box-shadow: 0 3px 8px rgba(0,0,0,0.15);
       padding: 25px;
       border-top: 6px solid var(--yellow);
+      margin-bottom: 25px;
     }
 
     .section-title {
@@ -175,23 +176,139 @@
 
     .btn {
       display: inline-block;
-      padding: 9px 16px;
+      padding: 12px 20px;
       font-weight: bold;
       color: #ffffff;
       text-decoration: none;
       border-radius: 4px;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-whatsapp { background: #25d366; }
     .btn-call { background: var(--blue); }
+    .btn-regolamento { 
+      background: var(--green); 
+      font-size: 0.9rem;
+      padding: 8px 14px;
+    }
+
+    /* REGOLAMENTO */
+
+    .regolamento-section {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 30px;
+      margin: 30px 0;
+      border-top: 6px solid var(--blue);
+    }
+
+    .regolamento-section h3 {
+      color: var(--blue);
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .regolamento-section h3::before {
+      content: "📋";
+      font-size: 1.5rem;
+    }
+
+    .regolamento-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0e4c4;
+    }
+
+    .regolamento-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .regolamento-item summary {
+      background: linear-gradient(135deg, var(--blue), #0056b3);
+      font-size: 1rem;
+      padding: 15px 20px;
+    }
+
+    .regolamento-item .details-body {
+      background: var(--paper);
+      padding: 20px 24px;
+      font-size: 0.95rem;
+    }
+
+    .regolamento-sintesi {
+      background: linear-gradient(135deg, var(--green), #1ea745);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .checkbox-container {
+      margin-top: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff6d6;
+      padding: 15px;
+      border-radius: 4px;
+      border-left: 4px solid var(--yellow);
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin-top: 2px;
+      transform: scale(1.2);
+      accent-color: var(--green);
+    }
+
+    .checkbox-container label {
+      margin: 0;
+      font-weight: bold;
+      color: var(--blue);
+    }
 
     footer {
       background: #01294f;
       color: #ffffff;
       text-align: center;
-      padding: 18px;
+      padding: 25px;
       font-size: 0.9rem;
+    }
+
+    .footer-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 15px 10px 30px; }
+      .stripe, .regolamento-section { padding: 20px; }
+      .cta-buttons { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
@@ -226,7 +343,7 @@
       <div class="details-body">
         <p><strong>Servizio incluso solo durante la fase di avvio.</strong></p>
         <ul>
-          <li>1 controllo mensile dell’abitazione</li>
+          <li>1 controllo mensile dell'abitazione</li>
           <li>Verifica porte, finestre e accessi</li>
           <li>Ariazione dei locali</li>
           <li>Controllo visivo di umidità e anomalie</li>
@@ -234,7 +351,7 @@
           <li>Report essenziale via WhatsApp</li>
         </ul>
         <p>
-          Il pacchetto base prevede esclusivamente il controllo e la presenza sull’immobile.
+          Il pacchetto base prevede esclusivamente il controllo e la presenza sull'immobile.
         </p>
       </div>
     </details>
@@ -260,30 +377,140 @@
       <strong>Obiettivo della fase di avvio</strong>
       <ul>
         <li>Testare il servizio sul campo</li>
-        <li>Perfezionare l’organizzazione operativa</li>
+        <li>Perfezionare l'organizzazione operativa</li>
         <li>Definire procedure affidabili</li>
-        <li>Preparare l’attivazione completa del servizio</li>
+        <li>Preparare l'attivazione completa del servizio</li>
       </ul>
     </div>
 
+  </div>
+
+  <!-- REGOLAMENTO DEL SERVIZIO -->
+  <div class="regolamento-section">
+    <h3>Regolamento del Servizio</h3>
+    
+    <div class="regolamento-item">
+      <details>
+        <summary>1. COSA FA IL SERVIZIO</summary>
+        <div class="details-body">
+          <p>Il servizio di gestione seconde case nasce per offrire una presenza di fiducia sul territorio a chi possiede una casa a Manduria o nei comuni limitrofi ma vive lontano.</p>
+          <p>L'obiettivo è controllare l'abitazione, tenerla seguita nel tempo e segnalare tempestivamente eventuali problemi. Non si tratta di un servizio di sorveglianza continua o di manutenzione professionale, ma di presidio, controllo e supporto locale.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-item">
+      <details>
+        <summary>2. DOVE OPERIAMO</summary>
+        <div class="details-body">
+          <p>Il servizio è attivo a:</p>
+          <ul>
+            <li>Manduria</li>
+            <li>Comuni limitrofi, entro un raggio massimo di circa 30 km</li>
+          </ul>
+          <p>Questo permette interventi puntuali e una presenza reale sul territorio.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-item">
+      <details>
+        <summary>3. COME FUNZIONANO I CONTROLLI</summary>
+        <div class="details-body">
+          <ul>
+            <li>I controlli sono programmati</li>
+            <li>Avvengono in giornate e orari organizzati in anticipo</li>
+            <li>Non è prevista reperibilità continua</li>
+          </ul>
+          <p>Questo sistema garantisce ordine, puntualità e continuità del servizio.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-item">
+      <details>
+        <summary>4. COSA INCLUDE IL CONTROLLO BASE</summary>
+        <div class="details-body">
+          <p>Il controllo base prevede:</p>
+          <ul>
+            <li>Verifica generale dell'abitazione</li>
+            <li>Controllo di porte, finestre e accessi</li>
+            <li>Ariazione dei locali</li>
+            <li>Controllo visivo di eventuali anomalie evidenti</li>
+            <li>Comunicazione immediata in caso di problemi</li>
+            <li>Report essenziale con foto</li>
+          </ul>
+          <p>Il controllo base è pensato per monitorare lo stato della casa, non per effettuare interventi o lavori.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-item">
+      <details>
+        <summary>5. FASE DI AVVIO DEL SERVIZIO</summary>
+        <div class="details-body">
+          <p>Il servizio è attualmente in fase di avvio e viene offerto su un numero limitato di abitazioni per testare l'organizzazione e migliorare le procedure.</p>
+          <p>Dopo questa fase:</p>
+          <ul>
+            <li>Il controllo base è incluso</li>
+            <li>Non è prevista una durata fissa</li>
+            <li>Il servizio potrà evolvere in una versione definitiva</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-item">
+      <details>
+        <summary>6-12. Servizi aggiuntivi, emergenze, comunicazione, responsabilità, accesso e accordo</summary>
+        <div class="details-body">
+          <ul>
+            <li><strong>Servizi extra:</strong> Valutati caso per caso, solo se concordati, con rimborso spese</li>
+            <li><strong>Emergenze:</strong> Avviso immediato al proprietario, costi comunicati prima</li>
+            <li><strong>Comunicazione:</strong> WhatsApp con report dopo ogni controllo</li>
+            <li><strong>Responsabilità:</strong> Solo segnalazione, non interventi non autorizzati</li>
+            <li><strong>Accordo:</strong> Attivazione implica accettazione del regolamento completo</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="regolamento-sintesi">
+      <strong>IN SINTESI</strong><br>
+      Un servizio semplice, locale e affidabile, pensato per farti stare tranquillo anche quando sei lontano.
+    </div>
+  </div>
+
+  <div class="stripe">
     <div class="contacts">
       <p><strong>Area operativa</strong></p>
-      <p>Manduria e comuni limitrofi</p>
+      <p>Manduria e comuni limitrofi (raggio 30km)</p>
 
       <p><strong>Contatti</strong></p>
+      <div class="checkbox-container">
+        <input type="checkbox" id="accetto-regolamento" required>
+        <label for="accetto-regolamento">
+          ✅ Accetto il <a href="#regolamento" style="color: var(--blue); font-weight: bold;">Regolamento del Servizio</a>
+        </label>
+      </div>
       <div class="cta-buttons">
         <a class="btn btn-whatsapp"
            href="https://wa.me/393934425337?text=Ciao%2C%20vorrei%20informazioni%20sul%20servizio%20di%20gestione%20seconde%20case."
            target="_blank">WhatsApp</a>
         <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
+        <a class="btn btn-regolamento" href="#regolamento">📋 Regolamento</a>
       </div>
     </div>
-
   </div>
 </div>
 
-<footer>
-  Gestione Seconde Case – Manduria e comuni limitrofi
+<footer id="footer">
+  <p>Gestione Seconde Case – Manduria e comuni limitrofi</p>
+  <div class="footer-links">
+    <a href="#regolamento">Regolamento del Servizio</a>
+    <a href="https://wa.me/393934425337">WhatsApp</a>
+    <a href="tel:+393934425337">Chiamaci</a>
+  </div>
 </footer>
 
 </body>
