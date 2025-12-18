@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestione Seconde Case – Manduria</title>
-  <meta name="description" content="Servizio in fase di avvio per la gestione di seconde case a Manduria e comuni limitrofi. Presenza locale affidabile per chi vive lontano.">
+  <title>Gestione Seconde Case – Fase di Avvio</title>
+  <meta name="description" content="Servizio di gestione e controllo seconde case a Manduria e comuni limitrofi. Fase di avvio operativo con presenza locale affidabile.">
 
   <style>
     :root {
@@ -28,20 +28,20 @@
 
     header {
       text-align: center;
-      padding: 40px 20px 30px;
+      padding: 40px 20px 25px;
       background: linear-gradient(180deg, var(--blue) 0%, #003366 60%, #01294f 100%);
-      color: #fff;
+      color: #ffffff;
     }
 
     header h1 {
       margin: 0;
       font-size: 2.2rem;
-      letter-spacing: 1px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     header h2 {
-      margin: 8px 0 12px;
+      margin: 6px 0 12px;
       font-size: 1.4rem;
       color: var(--yellow);
       text-transform: uppercase;
@@ -50,18 +50,6 @@
     header p {
       margin: 4px 0;
       font-size: 1rem;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 12px;
-      background: var(--yellow);
-      color: #003366;
-      font-weight: bold;
-      font-size: 0.85rem;
-      border-radius: 3px;
-      text-transform: uppercase;
     }
 
     .container {
@@ -81,7 +69,7 @@
     .section-title {
       display: inline-block;
       background: var(--green);
-      color: #fff;
+      color: #ffffff;
       padding: 6px 14px;
       font-weight: bold;
       font-size: 1rem;
@@ -94,7 +82,7 @@
     ul {
       list-style: none;
       padding-left: 0;
-      margin: 10px 0 20px;
+      margin: 10px 0 18px;
     }
 
     li {
@@ -111,58 +99,87 @@
       font-weight: bold;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
+    /* ACCORDION */
 
-    .card {
-      background: #fff;
+    details {
+      margin-top: 12px;
       border-radius: 4px;
+      background: #ffffff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border-top: 5px solid var(--blue);
-      padding: 15px;
+      overflow: hidden;
     }
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 1rem;
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: #ffffff;
+      font-weight: bold;
       text-transform: uppercase;
-      color: var(--blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      font-size: 1.2rem;
+    }
+
+    details[open] summary {
+      background: var(--yellow);
+      color: #003366;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .details-body {
+      padding: 14px 18px;
+      background: #fffdf6;
+      border-top: 1px solid #f0e4c4;
     }
 
     .highlight {
       margin-top: 25px;
-      padding: 18px;
+      padding: 18px 20px;
       background: #fff6d6;
       border-left: 6px solid var(--yellow);
-      border-radius: 3px;
+      border-radius: 4px;
+    }
+
+    .highlight strong {
+      color: var(--blue);
+      text-transform: uppercase;
     }
 
     .contacts {
       margin-top: 25px;
-      padding: 18px;
+      padding: 18px 20px;
       background: #ffffff;
       border-left: 6px solid var(--blue);
-      border-radius: 3px;
+      border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.12);
     }
 
     .cta-buttons {
+      margin-top: 10px;
       display: flex;
       gap: 10px;
-      margin-top: 10px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 8px 14px;
-      border-radius: 4px;
+      display: inline-block;
+      padding: 9px 16px;
       font-weight: bold;
+      color: #ffffff;
       text-decoration: none;
-      color: #fff;
+      border-radius: 4px;
       font-size: 0.95rem;
     }
 
@@ -171,7 +188,7 @@
 
     footer {
       background: #01294f;
-      color: #fff;
+      color: #ffffff;
       text-align: center;
       padding: 18px;
       font-size: 0.9rem;
@@ -182,11 +199,10 @@
 <body>
 
 <header>
-  <h1>Servizi di Gestione</h1>
-  <h2>Seconde Case – Manduria</h2>
+  <h1>Gestione Seconde Case</h1>
+  <h2>Fase di Avvio Operativo</h2>
   <p>Hai una casa a Manduria o nei comuni limitrofi ma vivi lontano?</p>
-  <p>Affidala a una presenza locale che la controlla e la mantiene pronta quando ne hai bisogno.</p>
-  <span class="badge">Servizio in fase di avvio</span>
+  <p>Presenza locale affidabile per la tua tranquillità.</p>
 </header>
 
 <div class="container">
@@ -194,65 +210,72 @@
 
     <span class="section-title">Il servizio</span>
     <p>
-      Il servizio di gestione seconde case è pensato per proprietari che non risiedono stabilmente sul territorio
-      e desiderano una presenza affidabile che si occupi della propria abitazione.
+      Questo servizio è pensato per i proprietari che non risiedono stabilmente a Manduria o nei comuni limitrofi e desiderano una presenza di fiducia sul territorio.
     </p>
     <p>
-      In questa fase iniziale il servizio è attivo con un numero limitato di case,
-      per testare operatività, procedure e qualità del servizio.
+      L’obiettivo è garantire controllo, cura e segnalazione tempestiva, mantenendo l’abitazione seguita e pronta quando serve.
     </p>
 
-    <span class="section-title">Cosa facciamo</span>
-    <ul>
-      <li>Controllo periodico dell’abitazione</li>
-      <li>Verifica generale di sicurezza e condizioni</li>
-      <li>Apertura e chiusura stagionale</li>
-      <li>Pulizia pre-arrivo</li>
-      <li>Presenza per tecnici, consegne ed emergenze</li>
-      <li>Assistenza locale su chiamata</li>
-    </ul>
+    <span class="section-title">Stato attuale</span>
+    <p>
+      Il servizio è attualmente in <strong>fase di avvio operativo</strong>, su un numero limitato di abitazioni, per testare l’organizzazione e perfezionare le procedure.
+    </p>
 
-    <span class="section-title">Pacchetti di servizio</span>
-    <div class="cards">
-      <div class="card">
-        <h3>Controllo Base</h3>
-        <p>Per case chiuse o utilizzate raramente.</p>
-        <p>Controlli programmati, verifica sicurezza e report periodici.</p>
+    <details>
+      <summary>Pacchetto Base – Fase di Avvio</summary>
+      <div class="details-body">
+        <p><strong>Servizio incluso solo durante la fase di avvio.</strong></p>
+        <ul>
+          <li>1 controllo mensile dell’abitazione</li>
+          <li>Verifica porte, finestre e accessi</li>
+          <li>Ariazione dei locali</li>
+          <li>Controllo visivo di umidità e anomalie</li>
+          <li>Segnalazione immediata di problemi</li>
+          <li>Report essenziale via WhatsApp</li>
+        </ul>
+        <p>
+          Il pacchetto base prevede esclusivamente il controllo e la presenza sull’immobile.
+        </p>
       </div>
+    </details>
 
-      <div class="card">
-        <h3>Gestione Stagionale</h3>
-        <p>Per chi utilizza la casa in alcuni periodi dell’anno.</p>
-        <p>Apertura e chiusura stagionale, pulizia pre-arrivo e assistenza.</p>
+    <details>
+      <summary>Servizi aggiuntivi</summary>
+      <div class="details-body">
+        <p>
+          Eventuali servizi non inclusi nel controllo base possono essere effettuati
+          <strong>con rimborso spese concordato in anticipo</strong>.
+        </p>
+        <ul>
+          <li>Pulizie o preparazione della casa</li>
+          <li>Presenza per tecnici o artigiani</li>
+          <li>Interventi urgenti</li>
+          <li>Consegna o ritiro chiavi</li>
+          <li>Interventi su richiesta</li>
+        </ul>
       </div>
-
-      <div class="card">
-        <h3>Gestione Completa</h3>
-        <p>Per chi desidera delegare tutto con serenità.</p>
-        <p>Presenza continuativa, preparazione casa e assistenza su chiamata.</p>
-      </div>
-    </div>
+    </details>
 
     <div class="highlight">
-      <strong>Fase di avvio del servizio</strong>
-      <p>
-        Il servizio è attualmente in fase di avvio operativo con un numero limitato di abitazioni seguite,
-        al fine di raccogliere esperienza e perfezionare l’organizzazione prima dell’attivazione completa.
-      </p>
+      <strong>Obiettivo della fase di avvio</strong>
+      <ul>
+        <li>Testare il servizio sul campo</li>
+        <li>Perfezionare l’organizzazione operativa</li>
+        <li>Definire procedure affidabili</li>
+        <li>Preparare l’attivazione completa del servizio</li>
+      </ul>
     </div>
 
     <div class="contacts">
+      <p><strong>Area operativa</strong></p>
+      <p>Manduria e comuni limitrofi</p>
+
       <p><strong>Contatti</strong></p>
-      <p>Per informazioni o per partecipare alla fase iniziale del servizio.</p>
       <div class="cta-buttons">
         <a class="btn btn-whatsapp"
-           href="https://wa.me/393934425337"
-           target="_blank" rel="noopener">
-          WhatsApp
-        </a>
-        <a class="btn btn-call" href="tel:+393934425337">
-          Chiama
-        </a>
+           href="https://wa.me/393934425337?text=Ciao%2C%20vorrei%20informazioni%20sul%20servizio%20di%20gestione%20seconde%20case."
+           target="_blank">WhatsApp</a>
+        <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
       </div>
     </div>
 
@@ -260,7 +283,7 @@
 </div>
 
 <footer>
-  Servizi di Gestione Seconde Case – Manduria e comuni limitrofi
+  Gestione Seconde Case – Manduria e comuni limitrofi
 </footer>
 
 </body>
