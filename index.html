@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestione Seconde Case – Fase di Avvio</title>
-  <meta name="description" content="Servizio di gestione e controllo seconde case a Manduria e comuni limitrofi. Fase di avvio operativo con presenza locale affidabile.">
-
+  <title>Gestione Seconde Case – Fase di Avvio Operativo | Manduria</title>
+  <meta name="description" content="Servizio professionale di controllo e gestione seconde case a Manduria e comuni limitrofi. Presenza locale affidabile durante la fase di avvio.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gestione Seconde Case – Manduria">
+  <meta property="og:description" content="Controllo mensile, verifica sicurezza e report per la tua seconda casa. Fase avvio con presenza locale.">
+  <meta property="og:type" content="website">
+  
   <style>
     :root {
       --blue: #004990;
@@ -16,250 +21,324 @@
       --dark: #333333;
     }
 
-    * { box-sizing: border-box; }
-
-    <script>
-function inviaWhatsApp() {
-  const checkbox = document.getElementById('accetto-regolamento');
-
-  if (!checkbox.checked) {
-    alert("Devi accettare il Regolamento del Servizio prima di contattarci.");
-    return false;
-  }
-
-  const messaggio = encodeURIComponent(
-    "Ciao, confermo di aver letto e accettato il Regolamento del Servizio e vorrei informazioni sulla gestione seconde case."
-  );
-
-  window.open(
-    "https://wa.me/393934425337?text=" + messaggio,
-    "_blank"
-  );
-
-  return false;
-}
-</script>
-    
-    body {
+    * { 
+      box-sizing: border-box; 
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #ffffff 0, var(--sand) 55%, #e1cfaa 100%);
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Arial, sans-serif;
+      background: radial-gradient(circle at top, #ffffff 0%, var(--sand) 55%, #e1cfaa 100%);
       color: var(--dark);
       line-height: 1.6;
+      overflow-x: hidden;
     }
-    
+
     header {
-  position: relative;
-  text-align: center;
-  padding: 80px 20px 60px;
-  color: #ffffff;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-    url("assets/img/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      position: relative;
+      text-align: center;
+      padding: 80px 20px 60px;
+      color: #ffffff;
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("assets/img/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
     header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      letter-spacing: 1.5px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+      font-weight: 700;
     }
 
     header h2 {
-      margin: 6px 0 12px;
-      font-size: 1.4rem;
+      margin: 0 0 16px;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       color: var(--yellow);
       text-transform: uppercase;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      font-weight: 600;
     }
 
     header p {
-      margin: 4px 0;
-      font-size: 1rem;
+      margin: 8px 0;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 25px 20px 40px;
+      padding: 30px 20px 50px;
     }
 
     .stripe {
       background: var(--paper);
-      border-radius: 4px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      padding: 25px;
-      border-top: 6px solid var(--yellow);
-      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      padding: 35px 30px;
+      border-top: 8px solid var(--yellow);
+      margin-bottom: 35px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stripe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
     }
 
     .section-title {
       display: inline-block;
       background: var(--green);
       color: #ffffff;
-      padding: 6px 14px;
-      font-weight: bold;
-      font-size: 1rem;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      border-radius: 25px;
+      box-shadow: 0 2px 8px rgba(28,140,58,0.4);
     }
 
-    p { margin: 8px 0; }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 10px 0 18px;
+    .details-container {
+      margin: 20px 0;
     }
-
-    li {
-      position: relative;
-      padding-left: 26px;
-      margin-bottom: 6px;
-    }
-
-    li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-weight: bold;
-    }
-
-    /* ACCORDION */
 
     details {
-      margin-top: 12px;
-      border-radius: 4px;
+      margin: 15px 0;
+      border-radius: 8px;
       background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    details:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
     summary {
       list-style: none;
       cursor: pointer;
-      padding: 12px 16px;
-      background: var(--blue);
+      padding: 18px 24px;
+      background: linear-gradient(135deg, var(--blue), #0066cc);
       color: #ffffff;
-      font-weight: bold;
+      font-weight: 600;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 0.3s ease;
     }
 
     summary::-webkit-details-marker { display: none; }
+    summary[aria-expanded="true"] { background: linear-gradient(135deg, var(--yellow), #f9d71a); color: var(--blue); }
 
     summary::after {
-      content: "+";
-      font-size: 1.2rem;
+      content: "➕";
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
     }
 
-    details[open] summary {
-      background: var(--yellow);
-      color: #003366;
-    }
-
-    details[open] summary::after {
-      content: "−";
+    summary[aria-expanded="true"]::after {
+      content: "➖";
+      transform: rotate(180deg);
     }
 
     .details-body {
-      padding: 14px 18px;
-      background: #fffdf6;
+      padding: 25px 30px;
+      background: linear-gradient(135deg, #fffdf6 0%, #f8f5e8 100%);
       border-top: 1px solid #f0e4c4;
+      font-size: 0.98rem;
+    }
+
+    .details-body ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 15px 0;
+    }
+
+    .details-body li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .details-body li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 1.1rem;
+      font-weight: bold;
     }
 
     .highlight {
-      margin-top: 25px;
-      padding: 18px 20px;
-      background: #fff6d6;
-      border-left: 6px solid var(--yellow);
-      border-radius: 4px;
+      margin: 30px 0;
+      padding: 25px 30px;
+      background: linear-gradient(135deg, #fff6d6 0%, #fff0ba 100%);
+      border-left: 8px solid var(--yellow);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(246,196,0,0.2);
     }
 
     .highlight strong {
       color: var(--blue);
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
     }
 
     .contacts {
-      margin-top: 25px;
-      padding: 18px 20px;
-      background: #ffffff;
-      border-left: 6px solid var(--blue);
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      margin-top: 30px;
+      padding: 30px;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-left: 8px solid var(--blue);
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,73,144,0.15);
+      text-align: center;
+    }
+
+    .contacts p {
+      margin: 12px 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .checkbox-container {
+      margin: 25px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: linear-gradient(135deg, #fff6d6 0%, #fff0ba 100%);
+      padding: 20px 25px;
+      border-radius: 12px;
+      border-left: 6px solid var(--yellow);
+      box-shadow: 0 4px 15px rgba(246,196,0,0.2);
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin-top: 3px;
+      transform: scale(1.3);
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .checkbox-container label {
+      margin: 0;
+      font-weight: 600;
+      color: var(--blue);
+      cursor: pointer;
+      line-height: 1.4;
     }
 
     .cta-buttons {
-      margin-top: 10px;
+      margin-top: 25px;
       display: flex;
-      gap: 10px;
+      gap: 15px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      font-weight: 700;
       color: #ffffff;
       text-decoration: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      transition: transform 0.2s;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      min-width: 160px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
     }
 
-    .btn-whatsapp { background: #25d366; }
-    .btn-call { background: var(--blue); }
-    .btn-regolamento { 
-      background: var(--green); 
-      font-size: 0.9rem;
-      padding: 8px 14px;
+    .btn:hover::before { left: 100%; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+
+    .btn-whatsapp { 
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      box-shadow: 0 4px 15px rgba(37,211,102,0.4);
     }
 
-    /* REGOLAMENTO */
+    .btn-call { 
+      background: linear-gradient(135deg, var(--blue), #0066cc);
+      box-shadow: 0 4px 15px rgba(0,73,144,0.4);
+    }
 
     .regolamento-section {
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      padding: 30px;
-      margin: 30px 0;
-      border-top: 6px solid var(--blue);
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      padding: 40px;
+      margin: 40px 0;
+      border-top: 10px solid var(--blue);
+      position: relative;
+    }
+
+    .regolamento-section::before {
+      content: "📋";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 15px rgba(0,73,144,0.4);
     }
 
     .regolamento-section h3 {
       color: var(--blue);
       text-transform: uppercase;
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .regolamento-section h3::before {
-      content: "📋";
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .regolamento-item {
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #f0e4c4;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0e4c4;
     }
 
     .regolamento-item:last-child {
@@ -267,282 +346,321 @@ function inviaWhatsApp() {
       margin-bottom: 0;
     }
 
-    .regolamento-item summary {
-      background: linear-gradient(135deg, var(--blue), #0056b3);
-      font-size: 1rem;
-      padding: 15px 20px;
-    }
-
-    .regolamento-item .details-body {
-      background: var(--paper);
-      padding: 20px 24px;
-      font-size: 0.95rem;
-    }
-
     .regolamento-sintesi {
       background: linear-gradient(135deg, var(--green), #1ea745);
       color: white;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 25px;
+      padding: 30px;
+      border-radius: 16px;
+      margin-top: 35px;
       text-align: center;
-    }
-
-    .checkbox-container {
-      margin-top: 15px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: #fff6d6;
-      padding: 15px;
-      border-radius: 4px;
-      border-left: 4px solid var(--yellow);
-    }
-
-    .checkbox-container input[type="checkbox"] {
-      margin-top: 2px;
-      transform: scale(1.2);
-      accent-color: var(--green);
-    }
-
-    .checkbox-container label {
-      margin: 0;
-      font-weight: bold;
-      color: var(--blue);
+      box-shadow: 0 8px 30px rgba(28,140,58,0.4);
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
     footer {
-      background: #01294f;
+      background: linear-gradient(135deg, #01294f, #001f3f);
       color: #ffffff;
       text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f6c400' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .footer-links {
-      margin-top: 15px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
     .footer-links a {
       color: var(--yellow);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
 
     .footer-links a:hover {
-      text-decoration: underline;
+      background: var(--yellow);
+      color: var(--blue);
+      transform: translateY(-2px);
     }
 
+    /* Animazioni */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stripe, .regolamento-section, .contacts {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .container { padding: 15px 10px 30px; }
-      .stripe, .regolamento-section { padding: 20px; }
-      .cta-buttons { flex-direction: column; }
-      .footer-links { flex-direction: column; gap: 10px; }
+      header { padding: 60px 15px 40px; background-attachment: scroll; }
+      .container { padding: 20px 15px 40px; }
+      .stripe, .regolamento-section { padding: 25px 20px; margin-bottom: 25px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { min-width: 220px; margin: 5px; }
+      .footer-links { gap: 15px; }
+      .footer-links a { padding: 12px 20px; font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .section-title { font-size: 0.85rem; padding: 8px 16px; }
+      summary { padding: 15px 20px; font-size: 0.95rem; }
+      .details-body { padding: 20px 25px; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <h1>Gestione Seconde Case</h1>
+    <h2>Fase di Avvio Operativo</h2>
+    <p>Hai una casa a Manduria o nei comuni limitrofi ma vivi lontano?</p>
+    <p><strong>Presenza locale affidabile per la tua tranquillità</strong></p>
+  </header>
 
-<header>
-  <h1>Gestione Seconde Case</h1>
-  <h2>Fase di Avvio Operativo</h2>
-  <p>Hai una casa a Manduria o nei comuni limitrofi ma vivi lontano?</p>
-  <p>Presenza locale affidabile per la tua tranquillità.</p>
-</header>
+  <div class="container">
+    <div class="stripe">
+      <span class="section-title">Il Servizio</span>
+      <p>Servizio professionale pensato per proprietari che non risiedono stabilmente a Manduria o comuni limitrofi.</p>
+      <p>Obiettivo: <strong>controllo costante, cura e segnalazione tempestiva</strong> per mantenere l'abitazione sempre pronta.</p>
 
-<div class="container">
-  <div class="stripe">
+      <span class="section-title">Stato Attuale</span>
+      <p>Il servizio è in <strong>fase di avvio operativo</strong> su numero limitato di abitazioni per testare e perfezionare le procedure.</p>
 
-    <span class="section-title">Il servizio</span>
-    <p>
-      Questo servizio è pensato per i proprietari che non risiedono stabilmente a Manduria o nei comuni limitrofi e desiderano una presenza di fiducia sul territorio.
-    </p>
-    <p>
-      L’obiettivo è garantire controllo, cura e segnalazione tempestiva, mantenendo l’abitazione seguita e pronta quando serve.
-    </p>
+      <div class="details-container">
+        <details>
+          <summary aria-expanded="false">Pacchetto Base – Fase Avvio</summary>
+          <div class="details-body">
+            <p><strong>Servizio esclusivo fase di avvio</strong></p>
+            <ul>
+              <li>Controllo mensile programmato dell'abitazione</li>
+              <li>Verifica serrature, porte, finestre e accessi</li>
+              <li>Ariazione completa dei locali</li>
+              <li>Controllo umidità, infiltrazioni e anomalie</li>
+              <li>Segnalazione immediata di problemi rilevati</li>
+              <li>Report dettagliato con foto via WhatsApp</li>
+            </ul>
+          </div>
+        </details>
+      </div>
 
-    <span class="section-title">Stato attuale</span>
-    <p>
-      Il servizio è attualmente in <strong>fase di avvio operativo</strong>, su un numero limitato di abitazioni, per testare l’organizzazione e perfezionare le procedure.
-    </p>
+      <div class="details-container">
+        <details>
+          <summary aria-expanded="false">Servizi Aggiuntivi</summary>
+          <div class="details-body">
+            <p>Servizi extra disponibili <strong>con rimborso spese concordato preventivamente</strong>:</p>
+            <ul>
+              <li>Pulizie e preparazione casa per arrivi</li>
+              <li>Presenza per tecnici, artigiani, consegne</li>
+              <li>Interventi urgenti concordati</li>
+              <li>Gestione chiavi e accessi</li>
+              <li>Servizi su specifica richiesta</li>
+            </ul>
+          </div>
+        </details>
+      </div>
 
-    <details>
-      <summary>Pacchetto Base – Fase di Avvio</summary>
-      <div class="details-body">
-        <p><strong>Servizio incluso solo durante la fase di avvio.</strong></p>
+      <div class="highlight">
+        <strong>Obiettivo Fase Avvio</strong>
         <ul>
-          <li>1 controllo mensile dell'abitazione</li>
-          <li>Verifica porte, finestre e accessi</li>
-          <li>Ariazione dei locali</li>
-          <li>Controllo visivo di umidità e anomalie</li>
-          <li>Segnalazione immediata di problemi</li>
-          <li>Report essenziale via WhatsApp</li>
-        </ul>
-        <p>
-          Il pacchetto base prevede esclusivamente il controllo e la presenza sull'immobile.
-        </p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Servizi aggiuntivi</summary>
-      <div class="details-body">
-        <p>
-          Eventuali servizi non inclusi nel controllo base possono essere effettuati
-          <strong>con rimborso spese concordato in anticipo</strong>.
-        </p>
-        <ul>
-          <li>Pulizie o preparazione della casa</li>
-          <li>Presenza per tecnici o artigiani</li>
-          <li>Interventi urgenti</li>
-          <li>Consegna o ritiro chiavi</li>
-          <li>Interventi su richiesta</li>
+          <li>Test sul campo con procedure reali</li>
+          <li>Perfezionamento organizzazione operativa</li>
+          <li>Definizione protocolli standard affidabili</li>
+          <li>Preparazione per attivazione completa</li>
         </ul>
       </div>
-    </details>
-
-    <div class="highlight">
-      <strong>Obiettivo della fase di avvio</strong>
-      <ul>
-        <li>Testare il servizio sul campo</li>
-        <li>Perfezionare l'organizzazione operativa</li>
-        <li>Definire procedure affidabili</li>
-        <li>Preparare l'attivazione completa del servizio</li>
-      </ul>
     </div>
 
-  </div>
-
-  <!-- REGOLAMENTO DEL SERVIZIO -->
-  <div class="regolamento-section" id="regolamento">
-    <h3>Regolamento del Servizio</h3>
-    
-    <div class="regolamento-item">
-      <details>
-        <summary>1. COSA FA IL SERVIZIO</summary>
-        <div class="details-body">
-          <p>Il servizio di gestione seconde case nasce per offrire una presenza di fiducia sul territorio a chi possiede una casa a Manduria o nei comuni limitrofi ma vive lontano.</p>
-          <p>L'obiettivo è controllare l'abitazione, tenerla seguita nel tempo e segnalare tempestivamente eventuali problemi. Non si tratta di un servizio di sorveglianza continua o di manutenzione professionale, ma di presidio, controllo e supporto locale.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-item">
-      <details>
-        <summary>2. DOVE OPERIAMO</summary>
-        <div class="details-body">
-          <p>Il servizio è attivo a:</p>
-          <ul>
-            <li>Manduria</li>
-            <li>Comuni limitrofi, entro un raggio massimo di circa 30 km</li>
-          </ul>
-          <p>Questo permette interventi puntuali e una presenza reale sul territorio.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-item">
-      <details>
-        <summary>3. COME FUNZIONANO I CONTROLLI</summary>
-        <div class="details-body">
-          <ul>
-            <li>I controlli sono programmati</li>
-            <li>Avvengono in giornate e orari organizzati in anticipo</li>
-            <li>Non è prevista reperibilità continua</li>
-          </ul>
-          <p>Questo sistema garantisce ordine, puntualità e continuità del servizio.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-item">
-      <details>
-        <summary>4. COSA INCLUDE IL CONTROLLO BASE</summary>
-        <div class="details-body">
-          <p>Il controllo base prevede:</p>
-          <ul>
-            <li>Verifica generale dell'abitazione</li>
-            <li>Controllo di porte, finestre e accessi</li>
-            <li>Ariazione dei locali</li>
-            <li>Controllo visivo di eventuali anomalie evidenti</li>
-            <li>Comunicazione immediata in caso di problemi</li>
-            <li>Report essenziale con foto</li>
-          </ul>
-          <p>Il controllo base è pensato per monitorare lo stato della casa, non per effettuare interventi o lavori.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-item">
-      <details>
-        <summary>5. FASE DI AVVIO DEL SERVIZIO</summary>
-        <div class="details-body">
-          <p>Il servizio è attualmente in fase di avvio e viene offerto su un numero limitato di abitazioni per testare l'organizzazione e migliorare le procedure.</p>
-          <p>Dopo questa fase:</p>
-          <ul>
-            <li>Il controllo base è incluso</li>
-            <li>Non è prevista una durata fissa</li>
-            <li>Il servizio potrà evolvere in una versione definitiva</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-item">
-      <details>
-        <summary>6-12. Servizi aggiuntivi, emergenze, comunicazione, responsabilità, accesso e accordo</summary>
-        <div class="details-body">
-          <ul>
-            <li><strong>Servizi extra:</strong> Valutati caso per caso, solo se concordati, con rimborso spese</li>
-            <li><strong>Emergenze:</strong> Avviso immediato al proprietario, costi comunicati prima</li>
-            <li><strong>Comunicazione:</strong> WhatsApp con report dopo ogni controllo</li>
-            <li><strong>Responsabilità:</strong> Solo segnalazione, non interventi non autorizzati</li>
-            <li><strong>Accordo:</strong> Attivazione implica accettazione del regolamento completo</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
-    <div class="regolamento-sintesi">
-      <strong>IN SINTESI</strong><br>
-      Un servizio semplice, locale e affidabile, pensato per farti stare tranquillo anche quando sei lontano.
-    </div>
-  </div>
-
-  <div class="stripe">
-    <div class="contacts">
-      <p><strong>Area operativa</strong></p>
-      <p>Manduria e comuni limitrofi (raggio 30km)</p>
-
-      <p><strong>Contatti</strong></p>
-      <div class="checkbox-container">
-        <input type="checkbox" id="accetto-regolamento" required>
-        <label for="accetto-regolamento">
-          ✅ Accetto il <a href="#regolamento" style="color: var(--blue); font-weight: bold;">Regolamento del Servizio</a>
-        </label>
+    <div class="regolamento-section" id="regolamento">
+      <h3>Regolamento del Servizio</h3>
+      
+      <div class="regolamento-item">
+        <details>
+          <summary>1. Cosa Include il Servizio</summary>
+          <div class="details-body">
+            <p>Presenza di fiducia locale per proprietari assenti. Controllo, cura e segnalazione tempestiva di anomalie.</p>
+            <p>Non sorveglianza continua né manutenzione professionale, ma presidio affidabile e supporto operativo.</p>
+          </div>
+        </details>
       </div>
-      <div class="cta-buttons">
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/393934425337?text=Ciao%2C%20vorrei%20informazioni%20sul%20servizio%20di%20gestione%20seconde%20case."
-           onclick="return inviaWhatsApp();">
-        <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
+
+      <div class="regolamento-item">
+        <details>
+          <summary>2. Area Operativa</summary>
+          <div class="details-body">
+            <p><strong>Attivo a:</strong></p>
+            <ul>
+              <li>Manduria</li>
+              <li>Comuni limitrofi (raggio massimo 30 km)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="regolamento-item">
+        <details>
+          <summary>3. Modalità Controlli</summary>
+          <div class="details-body">
+            <ul>
+              <li>Controlli programmati e concordati</li>
+              <li>Orari e giorni organizzati preventivamente</li>
+              <li>Non reperibilità 24/7, ma presenza costante programmata</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="regolamento-item">
+        <details>
+          <summary>4. Controllo Base Completo</summary>
+          <div class="details-body">
+            <ul>
+              <li>Verifica integrità struttura e accessi</li>
+              <li>Controllo porte, finestre, serrature</li>
+              <li>Ariazione e ricircolo aria</li>
+              <li>Ispezione umidità e danni visibili</li>
+              <li>Avviso immediato problemi rilevati</li>
+              <li>Report foto + testo WhatsApp</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="regolamento-item">
+        <details>
+          <summary>5. Fase Avvio Dettagli</summary>
+          <div class="details-body">
+            <p>Fase test su numero limitato abitazioni per ottimizzare servizio.</p>
+            <ul>
+              <li>Controllo base incluso gratuitamente</li>
+              <li>Durata fase da definire sul campo</li>
+              <li>Evoluzione verso servizio definitivo</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="regolamento-item">
+        <details>
+          <summary>6-12. Servizi Extra, Emergenze, Comunicazione</summary>
+          <div class="details-body">
+            <ul>
+              <li><strong>Extra:</strong> Solo concordati, rimborso spese</li>
+              <li><strong>Emergenze:</strong> Avviso + costi preventivi</li>
+              <li><strong>Comunicazione:</strong> WhatsApp con report completi</li>
+              <li><strong>Responsabilità:</strong> Segnalazione, non interventi autonomi</li>
+              <li><strong>Accordo:</strong> Utilizzo = accettazione regolamento</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="regolamento-sintesi">
+        <strong>SERVIZIO SEMPLICE • LOCALE • AFFIDABILE</strong><br>
+        Tranquillità garantita quando sei lontano dalla tua casa
+      </div>
+    </div>
+
+    <div class="stripe">
+      <div class="contacts">
+        <p><strong>🌍 Area Operativa</strong></p>
+        <p>Manduria e comuni limitrofi • Raggio 30 km</p>
+
+        <p><strong>📱 Contattaci Ora</strong></p>
+        
+        <div class="checkbox-container">
+          <input type="checkbox" id="accetto-regolamento">
+          <label for="accetto-regolamento">
+            ✅ Confermo di aver letto e accettato il <a href="#regolamento" style="color: var(--blue); font-weight: 700; text-decoration: none;">Regolamento Completo</a>
+          </label>
+        </div>
+
+        <div class="cta-buttons">
+          <a class="btn btn-whatsapp" href="#" onclick="return inviaWhatsApp();">
+            💬 WhatsApp
+          </a>
+          <a class="btn btn-call" href="tel:+393934425337">
+            📞 Chiama Ora
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<footer id="footer">
-  <p>Gestione Seconde Case – Manduria e comuni limitrofi</p>
-  <div class="footer-links">
-    <a href="https://wa.me/393934425337">WhatsApp</a>
-    <a href="tel:+393934425337">Chiamaci</a>
-  </div>
-</footer>
+  <footer id="footer">
+    <p><strong>Gestione Seconde Case</strong> – Manduria e Comuni Limitrofi</p>
+    <p>Servizio professionale • Fase di avvio operativo</p>
+    <div class="footer-links">
+      <a href="#" onclick="return inviaWhatsApp();">Inizia WhatsApp</a>
+      <a href="tel:+393934425337">Chiamata Diretta</a>
+    </div>
+  </footer>
 
+  <script>
+    function inviaWhatsApp() {
+      const checkbox = document.getElementById('accetto-regolamento');
+      
+      if (!checkbox.checked) {
+        alert('❌ Devi prima accettare il Regolamento del Servizio per contattarci.');
+        checkbox.focus();
+        return false;
+      }
+
+      const messaggio = encodeURIComponent(
+        'Ciao! Ho letto e accettato il Regolamento del Servizio Gestione Seconde Case.\n' +
+        'Vorrei informazioni sul Pacchetto Base fase di avvio.\n\n' +
+        'Grazie!'
+      );
+
+      window.open(
+        'https://wa.me/393934425337?text=' + messaggio,
+        '_blank',
+        'noopener,noreferrer'
+      );
+
+      return false;
+    }
+
+    // Migliora accessibilità accordion
+    document.querySelectorAll('details').forEach(detail => {
+      const summary = detail.querySelector('summary');
+      summary.addEventListener('click', () => {
+        const isOpen = detail.getAttribute('open');
+        summary.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Smooth scroll per anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
