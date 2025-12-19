@@ -11,6 +11,9 @@
   <meta property="og:description" content="Controllo mensile, verifica sicurezza e report per la tua seconda casa. Fase avvio con presenza locale.">
   <meta property="og:type" content="website">
   
+  <!-- Preload immagine hero -->
+  <link rel="preload" href="assets/img/hero.jpg" as="image">
+  
   <style>
     :root {
       --blue: #004990;
@@ -40,11 +43,24 @@
       text-align: center;
       padding: 80px 20px 60px;
       color: #ffffff;
-      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("assets/img/hero.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      min-height: 60vh;
+      /* Fallback gradient + immagine con path corretto */
+      background: 
+        linear-gradient(135deg, rgba(0,73,144,0.85), rgba(28,140,58,0.7)),
+        radial-gradient(circle at center, var(--sand) 0%, #e1cfaa 70%),
+        /* Immagine hero - path relativo dalla root */
+        url("assets/img/hero.jpg");
+      background-size: cover, cover, cover;
+      background-position: center, center, center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, scroll, scroll;
+    }
+
+    /* Fallback se immagine non carica */
+    @supports not (background-attachment: fixed) {
+      header {
+        background-attachment: scroll, scroll, scroll;
+      }
     }
 
     header h1 {
@@ -143,7 +159,10 @@
     }
 
     summary::-webkit-details-marker { display: none; }
-    summary[aria-expanded="true"] { background: linear-gradient(135deg, var(--yellow), #f9d71a); color: var(--blue); }
+    summary[aria-expanded="true"] { 
+      background: linear-gradient(135deg, var(--yellow), #f9d71a); 
+      color: var(--blue); 
+    }
 
     summary::after {
       content: "➕";
@@ -285,7 +304,10 @@
     }
 
     .btn:hover::before { left: 100%; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+    .btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+    }
 
     .btn-whatsapp { 
       background: linear-gradient(135deg, #25d366, #128c7e);
@@ -375,7 +397,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f6c400' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: 
+        url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f6c400' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      pointer-events: none;
     }
 
     .footer-links {
@@ -414,7 +439,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      header { padding: 60px 15px 40px; background-attachment: scroll; }
+      header { 
+        padding: 60px 15px 40px; 
+        background-attachment: scroll !important;
+        min-height: 50vh;
+      }
       .container { padding: 20px 15px 40px; }
       .stripe, .regolamento-section { padding: 25px 20px; margin-bottom: 25px; }
       .cta-buttons { flex-direction: column; align-items: center; }
@@ -432,7 +461,7 @@
 </head>
 
 <body>
-  <header>
+  <header role="banner">
     <h1>Gestione Seconde Case</h1>
     <h2>Fase di Avvio Operativo</h2>
     <p>Hai una casa a Manduria o nei comuni limitrofi ma vivi lontano?</p>
@@ -646,8 +675,8 @@
     document.querySelectorAll('details').forEach(detail => {
       const summary = detail.querySelector('summary');
       summary.addEventListener('click', () => {
-        const isOpen = detail.getAttribute('open');
-        summary.setAttribute('aria-expanded', !isOpen);
+        const isOpen = detail.hasAttribute('open');
+        summary.setAttribute('aria-expanded', isOpen);
       });
     });
 
@@ -660,6 +689,22 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // Preload immagine hero con fallback
+    window.addEventListener('load', function() {
+      const header = document.querySelector('header');
+      const heroImg = new Image();
+      heroImg.onload = function() {
+        console.log('Hero image caricata correttamente');
+      };
+      heroImg.onerror = function() {
+        console.log('Hero image non trovata - usando fallback');
+        header.style.background = 
+          'linear-gradient(135deg, rgba(0,73,144,0.9), rgba(28,140,58,0.8)), ' +
+          'radial-gradient(circle at center, var(--sand) 0%, #e1cfaa 70%)';
+      };
+      heroImg.src = 'assets/img/hero.jpg';
     });
   </script>
 </body>
