@@ -18,6 +18,28 @@
 
     * { box-sizing: border-box; }
 
+    <script>
+function inviaWhatsApp() {
+  const checkbox = document.getElementById('accetto-regolamento');
+
+  if (!checkbox.checked) {
+    alert("Devi accettare il Regolamento del Servizio prima di contattarci.");
+    return false;
+  }
+
+  const messaggio = encodeURIComponent(
+    "Ciao, confermo di aver letto e accettato il Regolamento del Servizio e vorrei informazioni sulla gestione seconde case."
+  );
+
+  window.open(
+    "https://wa.me/393934425337?text=" + messaggio,
+    "_blank"
+  );
+
+  return false;
+}
+</script>
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -397,7 +419,7 @@
   </div>
 
   <!-- REGOLAMENTO DEL SERVIZIO -->
-  <div class="regolamento-section">
+  <div class="regolamento-section" id="regolamento">
     <h3>Regolamento del Servizio</h3>
     
     <div class="regolamento-item">
@@ -507,7 +529,7 @@
       <div class="cta-buttons">
         <a class="btn btn-whatsapp"
            href="https://wa.me/393934425337?text=Ciao%2C%20vorrei%20informazioni%20sul%20servizio%20di%20gestione%20seconde%20case."
-           target="_blank">WhatsApp</a>
+           onclick="return inviaWhatsApp();">
         <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
       </div>
     </div>
