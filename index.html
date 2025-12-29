@@ -6,10 +6,6 @@
   <title>Gestione Seconde Case – Fase Pilota | Manduria</title>
   <meta name="description" content="Servizio di gestione seconde case a Manduria e comuni limitrofi. Fase pilota a numero chiuso con presenza locale affidabile.">
 
-  <meta property="og:title" content="Gestione Seconde Case – Manduria">
-  <meta property="og:description" content="Fase pilota a numero chiuso per il controllo della tua seconda casa.">
-  <meta property="og:type" content="website">
-
   <link rel="preload" href="assets/img/hero.jpg" as="image">
 
   <style>
@@ -23,14 +19,12 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: system-ui, -apple-system, Arial, sans-serif;
       background: radial-gradient(circle at top, #ffffff 0%, var(--sand) 55%, #e1cfaa 100%);
       color: var(--dark);
       line-height: 1.6;
     }
-
     header {
       text-align: center;
       padding: 80px 20px 60px;
@@ -42,154 +36,33 @@
       background-size: cover;
       background-position: center;
     }
+    header h1 { font-size: clamp(1.8rem,5vw,2.5rem); text-transform: uppercase; letter-spacing: 1.5px; font-weight:700; text-shadow:0 3px 10px rgba(0,0,0,0.8);}
+    header h2 { margin-top: 10px; font-size: clamp(1.2rem,3vw,1.5rem); color: var(--yellow); text-transform: uppercase; font-weight:600;}
+    header p { margin-top: 12px; max-width:600px; margin-left:auto; margin-right:auto;}
 
-    header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.8);
-    }
+    .container { max-width: 1100px; margin:auto; padding:40px 20px; }
+    .stripe { background: var(--paper); border-radius:12px; padding:35px 30px; margin-bottom:35px; border-top:8px solid var(--yellow); box-shadow:0 8px 25px rgba(0,0,0,0.12);}
+    .section-title { display:inline-block; background: var(--green); color:white; padding:10px 20px; border-radius:25px; font-weight:700; text-transform:uppercase; font-size:0.95rem; margin-bottom:20px;}
+    details { margin:15px 0; background:white; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    summary { cursor:pointer; padding:18px 24px; background:linear-gradient(135deg,var(--blue),#0066cc); color:white; font-weight:600; text-transform:uppercase; list-style:none; display:flex; justify-content:space-between;}
+    summary::after { content:"➕"; }
+    details[open] summary::after { content:"➖"; }
+    .details-body { padding:25px 30px; background:#fffdf6; }
+    .details-body ul { list-style:none; margin-top:15px; }
+    .details-body li { padding-left:30px; margin-bottom:10px; position:relative; }
+    .details-body li::before { content:"✅"; position:absolute; left:0; }
+    .highlight { margin-top:30px; padding:25px 30px; background:#fff6d6; border-left:8px solid var(--yellow); border-radius:8px; }
 
-    header h2 {
-      margin-top: 10px;
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
-      color: var(--yellow);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    header p {
-      margin-top: 12px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .stripe {
-      background: var(--paper);
-      border-radius: 12px;
-      padding: 35px 30px;
-      margin-bottom: 35px;
-      border-top: 8px solid var(--yellow);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    }
-
-    .section-title {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    details {
-      margin: 15px 0;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    summary {
-      cursor: pointer;
-      padding: 18px 24px;
-      background: linear-gradient(135deg, var(--blue), #0066cc);
-      color: white;
-      font-weight: 600;
-      text-transform: uppercase;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    summary::after { content: "➕"; }
-    details[open] summary::after { content: "➖"; }
-
-    .details-body {
-      padding: 25px 30px;
-      background: #fffdf6;
-    }
-
-    .details-body ul {
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .details-body li {
-      padding-left: 30px;
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .details-body li::before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-    }
-
-    .highlight {
-      margin-top: 30px;
-      padding: 25px 30px;
-      background: #fff6d6;
-      border-left: 8px solid var(--yellow);
-      border-radius: 8px;
-    }
-
-    .contacts {
-      text-align: center;
-      padding: 30px;
-      background: #ffffff;
-      border-left: 8px solid var(--blue);
-      border-radius: 12px;
-    }
-
-    .checkbox-container {
-      margin: 25px 0;
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-      background: #fff6d6;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .cta-buttons {
-      margin-top: 20px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 16px 28px;
-      border-radius: 50px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
-    }
-
-    .btn-whatsapp { background: #25d366; }
+    .contacts { text-align:center; padding:30px; background:#ffffff; border-left:8px solid var(--blue); border-radius:12px; margin-top:20px;}
+    .checkbox-container { margin:25px 0; display:flex; gap:15px; align-items:flex-start; background:#fff6d6; padding:20px; border-radius:12px; }
+    .cta-buttons { margin-top:20px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;}
+    .btn { padding:16px 28px; border-radius:50px; font-weight:700; text-transform:uppercase; color:white; text-decoration:none;}
+    .btn-whatsapp { background:#25d366; }
     .btn-call { background: var(--blue); }
 
-    footer {
-      background: #01294f;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
+    footer { background:#01294f; color:white; text-align:center; padding:40px 20px; }
+
+    .posti-disponibili { text-align:center; font-weight:700; font-size:1.1rem; margin:15px 0; color:var(--blue);}
   </style>
 </head>
 
@@ -238,6 +111,22 @@
       </div>
     </details>
 
+    <!-- Nuova sezione regolamento sotto Servizi Extra -->
+    <details>
+      <summary>Regolamento Completo Fase Pilota</summary>
+      <div class="details-body">
+        <ul>
+          <li><strong>Oggetto del servizio:</strong> Presenza locale affidabile per controllo e segnalazione di anomalie. Non comprende sorveglianza 24/7 né manutenzione professionale.</li>
+          <li><strong>Durata e numero abitazioni:</strong> Fase pilota limitata a 2 mesi e max 10 abitazioni. Accesso su selezione manuale.</li>
+          <li><strong>Area operativa:</strong> Manduria e comuni limitrofi entro 30 km.</li>
+          <li><strong>Modalità controlli:</strong> Controlli programmati e concordati; orari e giorni organizzati preventivamente; non reperibilità 24/7.</li>
+          <li><strong>Servizi extra:</strong> Tutti i servizi aggiuntivi sono a pagamento, con costi comunicati prima dell’intervento.</li>
+          <li><strong>Comunicazioni:</strong> Segnalazioni via WhatsApp con report fotografici; richieste extra valutate singolarmente.</li>
+          <li><strong>Accettazione:</strong> L'utilizzo del servizio implica la piena accettazione del presente regolamento.</li>
+        </ul>
+      </div>
+    </details>
+
     <div class="highlight">
       <strong>Obiettivo della fase pilota</strong>
       <ul>
@@ -248,22 +137,17 @@
     </div>
   </div>
 
-  <div class="stripe">
-    <div class="contacts">
-      <p><strong>Area Operativa</strong></p>
-      <p>Manduria e comuni entro 30 km</p>
+  <div class="contacts">
+    <p class="posti-disponibili">Posti disponibili fase pilota: 4 / 10</p>
 
-      <div class="checkbox-container">
-        <input type="checkbox" id="accetto-regolamento">
-        <label for="accetto-regolamento">
-          Confermo di aver letto e accettato il Regolamento del Servizio
-        </label>
-      </div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="accetto-regolamento">
+      <label for="accetto-regolamento">Confermo di aver letto e accettato il Regolamento del Servizio</label>
+    </div>
 
-      <div class="cta-buttons">
-        <a class="btn btn-whatsapp" href="#" onclick="return inviaWhatsApp();">WhatsApp</a>
-        <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
-      </div>
+    <div class="cta-buttons">
+      <a class="btn btn-whatsapp" href="#" onclick="return inviaWhatsApp();">WhatsApp</a>
+      <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
     </div>
   </div>
 
@@ -278,15 +162,12 @@
   function inviaWhatsApp() {
     const checkbox = document.getElementById('accetto-regolamento');
     if (!checkbox.checked) {
-      alert('Devi accettare il regolamento prima di contattarci.');
+      alert('❌ Devi prima accettare il Regolamento del Servizio.');
       return false;
     }
-
     const msg = encodeURIComponent(
-      "Ciao! Ho letto e accettato il regolamento.\n" +
-      "Vorrei candidarmi per il periodo di prova (fase pilota).\nGrazie."
+      "Ciao! Ho letto e accettato il regolamento.\nVorrei candidarmi per il periodo di prova (fase pilota).\nGrazie."
     );
-
     window.open("https://wa.me/393934425337?text=" + msg, "_blank");
     return false;
   }
