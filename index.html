@@ -4,156 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestione Seconde Case – Fase Pilota | Manduria</title>
-  <meta name="description" content="Servizio di gestione seconde case a Manduria e comuni limitrofi. Fase pilota a numero chiuso con presenza locale affidabile.">
+  <meta name="description" content="Servizio di controllo e presidio seconde case a Manduria e comuni limitrofi. Fase pilota a numero chiuso.">
 
   <link rel="preload" href="assets/img/hero.jpg" as="image">
 
   <style>
     :root {
-      --blue: #004990;
-      --yellow: #f6c400;
-      --green: #1c8c3a;
-      --sand: #f2e3c6;
-      --paper: #fff8e8;
-      --dark: #333333;
+      --blue:#004990;
+      --yellow:#f6c400;
+      --green:#1c8c3a;
+      --sand:#f2e3c6;
+      --paper:#fff8e8;
+      --dark:#333;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *{box-sizing:border-box;margin:0;padding:0}
 
-    body {
-      font-family: system-ui, -apple-system, Arial, sans-serif;
-      background: radial-gradient(circle at top, #ffffff 0%, var(--sand) 55%, #e1cfaa 100%);
-      color: var(--dark);
-      line-height: 1.6;
+    body{
+      font-family:system-ui,-apple-system,Arial,sans-serif;
+      background:radial-gradient(circle at top,#fff 0%,var(--sand) 55%,#e1cfaa 100%);
+      color:var(--dark);
+      line-height:1.6;
     }
 
-    header {
-      text-align: center;
-      padding: 80px 20px 60px;
-      color: #ffffff;
-      min-height: 60vh;
+    header{
+      text-align:center;
+      padding:80px 20px 60px;
+      color:#fff;
+      min-height:60vh;
       background:
-        linear-gradient(135deg, rgba(0,73,144,0.85), rgba(28,140,58,0.7)),
+        linear-gradient(135deg,rgba(0,73,144,.85),rgba(28,140,58,.7)),
         url("assets/img/hero.jpg");
-      background-size: cover;
-      background-position: center;
+      background-size:cover;
+      background-position:center;
     }
 
-    header h1 {
-      font-size: clamp(1.8rem,5vw,2.5rem);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+    header h1{
+      font-size:clamp(1.8rem,5vw,2.5rem);
+      text-transform:uppercase;
+      letter-spacing:1.5px;
       font-weight:700;
-      text-shadow:0 3px 10px rgba(0,0,0,0.8);
+      text-shadow:0 3px 10px rgba(0,0,0,.8);
     }
 
-    header h2 {
-      margin-top: 10px;
-      font-size: clamp(1.2rem,3vw,1.5rem);
-      color: var(--yellow);
-      text-transform: uppercase;
+    header h2{
+      margin-top:10px;
+      font-size:clamp(1.2rem,3vw,1.5rem);
+      color:var(--yellow);
+      text-transform:uppercase;
       font-weight:600;
     }
 
-    header p { margin-top: 12px; max-width:600px; margin-inline:auto; }
+    header p{margin-top:12px;max-width:600px;margin-inline:auto}
 
-    .container { max-width: 1100px; margin:auto; padding:40px 20px; }
+    .container{max-width:1100px;margin:auto;padding:40px 20px}
 
-    .stripe {
-      background: var(--paper);
+    .stripe{
+      background:var(--paper);
       border-radius:12px;
       padding:35px 30px;
       margin-bottom:35px;
       border-top:8px solid var(--yellow);
-      box-shadow:0 8px 25px rgba(0,0,0,0.12);
+      box-shadow:0 8px 25px rgba(0,0,0,.12);
     }
 
-    .section-title {
+    .section-title{
       display:inline-block;
-      background: var(--green);
-      color:white;
+      background:var(--green);
+      color:#fff;
       padding:10px 20px;
       border-radius:25px;
       font-weight:700;
       text-transform:uppercase;
-      font-size:0.95rem;
+      font-size:.95rem;
       margin-bottom:20px;
     }
 
-    /* SERVIZIO */
-    .service-grid {
-      display:grid;
-      grid-template-columns:1fr;
-      gap:20px;
-      margin-top:25px;
-    }
-
-    .service-card {
-      background:white;
-      border-radius:14px;
-      padding:25px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.1);
-      border-left:6px solid var(--green);
-    }
-
-    .service-icon {
-      font-size:1.8rem;
-      margin-bottom:8px;
-    }
-
-    .service-card h4 {
+    h3{
       color:var(--blue);
-      margin-bottom:8px;
-      font-size:1.05rem;
+      margin:10px 0 15px;
     }
 
-    @media (min-width:768px) {
-      .service-grid { grid-template-columns: repeat(2,1fr); }
-    }
-
-    details {
-      margin:15px 0;
-      background:white;
+    details{
+      margin:18px 0;
+      background:#fff;
       border-radius:8px;
       overflow:hidden;
-      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      box-shadow:0 4px 15px rgba(0,0,0,.1);
     }
 
-    summary {
+    summary{
       cursor:pointer;
       padding:18px 24px;
       background:linear-gradient(135deg,var(--blue),#0066cc);
-      color:white;
+      color:#fff;
       font-weight:600;
       text-transform:uppercase;
       list-style:none;
       display:flex;
       justify-content:space-between;
+      align-items:center;
     }
 
-    summary::after { content:"➕"; }
-    details[open] summary::after { content:"➖"; }
+    summary::after{content:"➕"}
+    details[open] summary::after{content:"➖"}
 
-    .details-body {
+    .details-body{
       padding:25px 30px;
       background:#fffdf6;
     }
 
-    .details-body ul { list-style:none; margin-top:15px; }
+    .details-body ul{
+      list-style:none;
+      margin-top:15px;
+    }
 
-    .details-body li {
+    .details-body li{
       padding-left:28px;
       margin-bottom:10px;
       position:relative;
     }
 
-    .details-body li::before {
+    .details-body li::before{
       content:"✔";
       position:absolute;
       left:0;
     }
 
-    .highlight {
+    .highlight{
       margin-top:30px;
       padding:25px 30px;
       background:#fff6d6;
@@ -161,22 +139,22 @@
       border-radius:8px;
     }
 
-    .contacts {
+    .contacts{
       text-align:center;
       padding:30px;
-      background:#ffffff;
+      background:#fff;
       border-left:8px solid var(--blue);
       border-radius:12px;
     }
 
-    .posti-disponibili {
+    .posti-disponibili{
       font-weight:700;
       font-size:1.15rem;
       color:var(--blue);
       margin-bottom:15px;
     }
 
-    .checkbox-container {
+    .checkbox-container{
       margin:25px 0;
       display:flex;
       gap:12px;
@@ -187,7 +165,7 @@
       text-align:left;
     }
 
-    .cta-buttons {
+    .cta-buttons{
       margin-top:20px;
       display:flex;
       gap:15px;
@@ -195,21 +173,21 @@
       flex-wrap:wrap;
     }
 
-    .btn {
+    .btn{
       padding:16px 28px;
       border-radius:50px;
       font-weight:700;
       text-transform:uppercase;
-      color:white;
+      color:#fff;
       text-decoration:none;
     }
 
-    .btn-whatsapp { background:#25d366; }
-    .btn-call { background: var(--blue); }
+    .btn-whatsapp{background:#25d366}
+    .btn-call{background:var(--blue)}
 
-    footer {
+    footer{
       background:#01294f;
-      color:white;
+      color:#fff;
       text-align:center;
       padding:40px 20px;
     }
@@ -221,7 +199,7 @@
 <header>
   <h1>Gestione Seconde Case</h1>
   <h2>Fase Pilota a Numero Chiuso</h2>
-  <p>Presenza locale affidabile per proprietari non residenti</p>
+  <p>Controllo e presidio locale per proprietari non residenti</p>
 </header>
 
 <div class="container">
@@ -229,81 +207,79 @@
   <div class="stripe">
     <span class="section-title">Il Servizio</span>
 
+    <h3>Controllo e Presidio Professionale della Tua Seconda Casa</h3>
+
     <p>
-      Servizio di presidio e controllo per seconde case a Manduria e comuni limitrofi,
-      pensato per chi vive lontano e desidera <strong>tranquillità reale, non promesse</strong>.
+      Il servizio è pensato per chi possiede una seconda casa a Manduria o nei comuni
+      limitrofi ma non può essere presente di persona per controllarla, mantenerla in buono
+      stato o prevenire problemi legati a periodi di assenza prolungata.
     </p>
 
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h4>Presenza Locale</h4>
-        <p>La casa non rimane incustodita: controlli programmati e presenza fisica reale.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🔍</div>
-        <h4>Controlli Strutturati</h4>
-        <p>Accessi, finestre, ariazione e stato generale verificati con metodo.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📸</div>
-        <h4>Report Documentati</h4>
-        <p>Report fotografici chiari inviati via WhatsApp dopo ogni controllo.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">⚠️</div>
-        <h4>Segnalazioni Tempestive</h4>
-        <p>Problemi o anomalie comunicati subito, senza interventi non autorizzati.</p>
-      </div>
-    </div>
-
     <details>
-      <summary>Servizio Base – Fase Pilota</summary>
+      <summary>Perché una seconda casa richiede controlli costanti</summary>
       <div class="details-body">
         <ul>
-          <li>1 controllo mensile programmato</li>
-          <li>Verifica stato generale e accessi</li>
-          <li>Ariazione locali</li>
-          <li>Report fotografico</li>
-          <li>Segnalazione immediata anomalie</li>
+          <li>Danni da umidità o infiltrazioni non rilevate</li>
+          <li>Furti, intrusioni o accessi non autorizzati</li>
+          <li>Deterioramento progressivo degli ambienti</li>
+          <li>Problemi idraulici o elettrici non individuati in tempo</li>
         </ul>
       </div>
     </details>
 
     <details>
-      <summary>Servizi Extra</summary>
+      <summary>1. Controllo Programmato e Sistematico</summary>
       <div class="details-body">
         <ul>
-          <li>Presenza per tecnici o consegne</li>
-          <li>Controlli aggiuntivi</li>
-          <li>Pulizie e preparazione casa</li>
-          <li>Gestione chiavi e accessi</li>
+          <li>Ispezioni mensili concordate</li>
+          <li>Verifica porte, finestre e serrature</li>
+          <li>Controllo umidità, muffe e infiltrazioni</li>
+          <li>Aerazione completa dei locali</li>
+          <li>Report fotografico via WhatsApp</li>
         </ul>
       </div>
     </details>
 
     <details>
-      <summary>Regolamento e Accessi</summary>
+      <summary>2. Report Puntuale e Trasparente</summary>
       <div class="details-body">
         <ul>
-          <li>Accessi solo per attività autorizzate</li>
-          <li>Chiavi tramite consegna diretta, cassetta o fiduciario</li>
-          <li>Ogni accesso è tracciato</li>
-          <li>Nessuna sorveglianza continuativa</li>
-          <li>Servizio di controllo, non manutenzione</li>
+          <li>Fotografie mirate ai punti rilevanti</li>
+          <li>Descrizione testuale chiara e sintetica</li>
+          <li>Segnalazioni strutturate di eventuali anomalie</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>3. Servizi Extra Flessibili</summary>
+      <div class="details-body">
+        <ul>
+          <li>Presenza per tecnici o artigiani</li>
+          <li>Accessi straordinari concordati</li>
+          <li>Pulizie e preparazione dell’abitazione</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>4. Tracciabilità degli Accessi</summary>
+      <div class="details-body">
+        <ul>
+          <li>Registrazione di data e ora</li>
+          <li>Descrizione attività svolta</li>
+          <li>Trasparenza totale per il proprietario</li>
         </ul>
       </div>
     </details>
 
     <div class="highlight">
-      <strong>Obiettivo fase pilota</strong>
+      <strong>Il valore del servizio</strong>
       <ul>
-        <li>Test operativo reale</li>
-        <li>Definizione standard definitivi</li>
-        <li>Preparazione servizio a pagamento</li>
+        <li>Riduzione dei rischi</li>
+        <li>Meno stress e imprevisti</li>
+        <li>Controllo reale anche a distanza</li>
+        <li>Supporto operativo concreto</li>
       </ul>
     </div>
   </div>
@@ -313,7 +289,7 @@
 
     <div class="checkbox-container">
       <input type="checkbox" id="accetto">
-      <label for="accetto">Confermo di aver letto e accettato il regolamento</label>
+      <label for="accetto">Confermo di aver letto e accettato il regolamento del servizio</label>
     </div>
 
     <div class="cta-buttons">
@@ -336,15 +312,15 @@
   document.getElementById("posti").textContent =
     `Posti disponibili fase pilota: ${MAX_POSTI - POSTI_OCCUPATI} / ${MAX_POSTI}`;
 
-  function contatta() {
-    if (!document.getElementById("accetto").checked) {
+  function contatta(){
+    if(!document.getElementById("accetto").checked){
       alert("Devi accettare il regolamento.");
-      return false;
+      return;
     }
     const msg = encodeURIComponent(
       "Ciao, ho letto e accettato il regolamento. Vorrei candidarmi per la fase pilota."
     );
-    window.open("https://wa.me/393934425337?text=" + msg, "_blank");
+    window.open("https://wa.me/393934425337?text="+msg,"_blank");
   }
 </script>
 
