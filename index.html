@@ -80,10 +80,7 @@
       margin-bottom:20px;
     }
 
-    h3{
-      color:var(--blue);
-      margin:10px 0 15px;
-    }
+    h3{color:var(--blue);margin:10px 0 15px}
 
     details{
       margin:18px 0;
@@ -204,23 +201,24 @@
 
 <div class="container">
 
+  <!-- SERVIZIO -->
   <div class="stripe">
     <span class="section-title">Il Servizio</span>
 
     <h3>Controllo e Presidio Professionale della Tua Seconda Casa</h3>
 
     <p>
-      Il servizio è pensato per chi possiede una seconda casa a Manduria o nei comuni
-      limitrofi ma non può essere presente di persona per controllarla, mantenerla in buono
-      stato o prevenire problemi legati a periodi di assenza prolungata.
+      Il servizio è pensato per proprietari di seconde case a Manduria e comuni limitrofi
+      che non possono essere presenti di persona e desiderano mantenere l’immobile
+      sotto controllo durante i periodi di assenza.
     </p>
 
     <details>
-      <summary>Perché una seconda casa richiede controlli costanti</summary>
+      <summary>Perché una seconda casa richiede attenzione costante</summary>
       <div class="details-body">
         <ul>
           <li>Danni da umidità o infiltrazioni non rilevate</li>
-          <li>Furti, intrusioni o accessi non autorizzati</li>
+          <li>Furti o accessi non autorizzati</li>
           <li>Deterioramento progressivo degli ambienti</li>
           <li>Problemi idraulici o elettrici non individuati in tempo</li>
         </ul>
@@ -228,68 +226,90 @@
     </details>
 
     <details>
-      <summary>1. Controllo Programmato e Sistematico</summary>
+      <summary>Controllo Programmato</summary>
       <div class="details-body">
         <ul>
           <li>Ispezioni mensili concordate</li>
           <li>Verifica porte, finestre e serrature</li>
-          <li>Controllo umidità, muffe e infiltrazioni</li>
-          <li>Aerazione completa dei locali</li>
+          <li>Controllo umidità e infiltrazioni visibili</li>
+          <li>Aerazione locali</li>
           <li>Report fotografico via WhatsApp</li>
         </ul>
       </div>
     </details>
 
     <details>
-      <summary>2. Report Puntuale e Trasparente</summary>
+      <summary>Report e Comunicazioni</summary>
       <div class="details-body">
         <ul>
-          <li>Fotografie mirate ai punti rilevanti</li>
-          <li>Descrizione testuale chiara e sintetica</li>
-          <li>Segnalazioni strutturate di eventuali anomalie</li>
+          <li>Documentazione fotografica</li>
+          <li>Descrizione sintetica dello stato dell’immobile</li>
+          <li>Segnalazione tempestiva anomalie</li>
         </ul>
       </div>
     </details>
-
-    <details>
-      <summary>3. Servizi Extra Flessibili</summary>
-      <div class="details-body">
-        <ul>
-          <li>Presenza per tecnici o artigiani</li>
-          <li>Accessi straordinari concordati</li>
-          <li>Pulizie e preparazione dell’abitazione</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>4. Tracciabilità degli Accessi</summary>
-      <div class="details-body">
-        <ul>
-          <li>Registrazione di data e ora</li>
-          <li>Descrizione attività svolta</li>
-          <li>Trasparenza totale per il proprietario</li>
-        </ul>
-      </div>
-    </details>
-
-    <div class="highlight">
-      <strong>Il valore del servizio</strong>
-      <ul>
-        <li>Riduzione dei rischi</li>
-        <li>Meno stress e imprevisti</li>
-        <li>Controllo reale anche a distanza</li>
-        <li>Supporto operativo concreto</li>
-      </ul>
-    </div>
   </div>
 
+  <!-- SERVIZI EXTRA -->
+  <div class="stripe">
+    <span class="section-title">Servizi Extra</span>
+
+    <p>
+      I servizi extra sono facoltativi, attivabili su richiesta e sempre concordati
+      prima dell’intervento.
+    </p>
+
+    <details>
+      <summary>Servizi Disponibili</summary>
+      <div class="details-body">
+        <ul>
+          <li>Presenza per tecnici, artigiani o fornitori</li>
+          <li>Accessi straordinari fuori controllo programmato</li>
+          <li>Pulizie e preparazione abitazione</li>
+          <li>Gestione consegne o verifiche specifiche</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- REGOLAMENTO -->
+  <div class="stripe">
+    <span class="section-title">Regolamento</span>
+
+    <details>
+      <summary>Condizioni del Servizio</summary>
+      <div class="details-body">
+        <ul>
+          <li>Servizio di controllo e segnalazione, non di sorveglianza continua</li>
+          <li>Nessuna manutenzione tecnica inclusa</li>
+          <li>Interventi solo previa autorizzazione del proprietario</li>
+          <li>Area operativa entro 30 km da Manduria</li>
+          <li>Fase pilota limitata nel tempo e nel numero di abitazioni</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Accesso alle Abitazioni e Gestione Chiavi</summary>
+      <div class="details-body">
+        <ul>
+          <li>Accesso solo per attività autorizzate</li>
+          <li>Chiavi fornite dal proprietario o tramite cassetta di sicurezza</li>
+          <li>Possibile utilizzo di terzo fiduciario indicato dal proprietario</li>
+          <li>Ogni accesso viene registrato con data e attività</li>
+          <li>Nessun utilizzo delle chiavi fuori dagli accordi</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- CONTATTI -->
   <div class="contacts">
     <p class="posti-disponibili" id="posti"></p>
 
     <div class="checkbox-container">
       <input type="checkbox" id="accetto">
-      <label for="accetto">Confermo di aver letto e accettato il regolamento del servizio</label>
+      <label for="accetto">Confermo di aver letto e accettato il regolamento</label>
     </div>
 
     <div class="cta-buttons">
