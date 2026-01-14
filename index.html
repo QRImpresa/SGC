@@ -1,388 +1,337 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HomeCheck – Controllo Periodico Seconda Casa | Manduria</title>
-  <meta name="description" content="HomeCheck: servizio di controllo e verifica periodica per seconde case a Manduria e comuni limitrofi. Fase pilota a numero chiuso.">
+<title>HomeCheck – Controllo Seconde Case | Manduria</title>
+<meta name="description" content="HomeCheck: controllo, presidio e cura periodica di seconde case a Manduria e comuni limitrofi. Fase pilota a numero chiuso.">
 
-  <link rel="preload" href="assets/img/hero.jpg" as="image">
-  <link rel="preload" href="assets/img/homecheck-logo.png" as="image">
+<style>
+:root{
+  --blue:#004990;
+  --blue-dark:#01294f;
+  --yellow:#f6c400;
+  --green:#1c8c3a;
+  --sand:#f2e3c6;
+  --paper:#fff8e8;
+  --dark:#333;
+  --radius:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:radial-gradient(circle at top,#fff 0,var(--sand) 55%,#e1cfaa 100%);
+  color:var(--dark);
+  line-height:1.6;
+}
 
-  <style>
-    :root{
-      --blue:#004990;
-      --yellow:#f6c400;
-      --green:#1c8c3a;
-      --sand:#f2e3c6;
-      --paper:#fff8e8;
-      --dark:#333;
-    }
+/* HERO */
+header{
+  background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+  color:#fff;
+  text-align:center;
+  padding:50px 20px 40px;
+}
+header img{
+  max-width:170px;
+  margin-bottom:14px;
+}
+header h1{text-transform:uppercase;font-size:2.1rem}
+header h2{color:var(--yellow);margin-top:6px;text-transform:uppercase;font-size:1.1rem}
+header p{max-width:780px;margin:12px auto 0}
+.hero-note{font-size:.9rem;opacity:.9;margin-top:8px}
 
-    *{box-sizing:border-box;margin:0;padding:0}
+/* LAYOUT */
+.container{max-width:1050px;margin:auto;padding:30px 20px 50px}
+.card{
+  background:var(--paper);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+  border-top:6px solid var(--yellow);
+}
+.section{margin-bottom:32px}
+.section-title{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:6px 14px;
+  font-weight:bold;
+  text-transform:uppercase;
+  border-radius:4px;
+  margin-bottom:12px;
+}
 
-    body{
-      font-family:system-ui,-apple-system,Arial,sans-serif;
-      background:radial-gradient(circle at top,#fff 0%,var(--sand) 55%,#e1cfaa 100%);
-      color:var(--dark);
-      line-height:1.6;
-    }
+/* LISTE */
+ul{list-style:none;margin:10px 0}
+li{padding-left:24px;position:relative;margin-bottom:6px}
+li::before{content:"✔";position:absolute;left:0;color:var(--green)}
 
-    header{
-      text-align:center;
-      padding:90px 20px 70px;
-      color:#fff;
-      min-height:60vh;
-      background:
-        linear-gradient(135deg,rgba(0,73,144,.85),rgba(28,140,58,.7)),
-        url("assets/img/hero.jpg");
-      background-size:cover;
-      background-position:center;
-    }
+/* DETTAGLI / TENDINE */
+details{
+  margin-top:14px;
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 16px;
+  background:var(--blue);
+  color:#fff;
+  font-weight:bold;
+  text-transform:uppercase;
+  display:flex;
+  justify-content:space-between;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"}
+details[open] summary::after{content:"−"}
 
-    .hero-logo{
-      width:130px;
-      max-width:45%;
-      margin-bottom:22px;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,.45));
-    }
+.pack-body{
+  padding:16px 18px;
+  background:#fffdf6;
+}
+.price-compare{
+  margin-top:10px;
+  font-size:.9rem;
+}
+.price-compare strong{color:var(--blue-dark)}
 
-    header h1{
-      font-size:clamp(2rem,5vw,2.6rem);
-      text-transform:uppercase;
-      letter-spacing:1.5px;
-      font-weight:700;
-      text-shadow:0 3px 10px rgba(0,0,0,.8);
-    }
+/* DISCLAIMER */
+.disclaimer{
+  background:#fbe9e5;
+  border-left:6px solid #d8492f;
+  padding:14px;
+  font-size:.9rem;
+  margin-top:26px;
+}
 
-    header h2{
-      margin-top:12px;
-      font-size:clamp(1.15rem,3vw,1.45rem);
-      color:var(--yellow);
-      font-weight:600;
-      text-transform:uppercase;
-    }
+/* CONTATTI */
+.contact-section{
+  margin-top:40px;
+  background:#fff;
+  border-left:6px solid var(--blue);
+  padding:24px;
+  text-align:center;
+}
+.contact-section h3{
+  color:var(--blue);
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:12px 18px;
+  border-radius:4px;
+  font-weight:bold;
+  text-decoration:none;
+  color:#fff;
+}
+.btn-whatsapp{background:#25d366}
+.btn-call{background:var(--blue)}
 
-    header p{
-      margin-top:14px;
-      max-width:640px;
-      margin-inline:auto;
-    }
-
-    .container{max-width:1100px;margin:auto;padding:40px 20px}
-
-    .stripe{
-      background:var(--paper);
-      border-radius:12px;
-      padding:35px 30px;
-      margin-bottom:35px;
-      border-top:8px solid var(--yellow);
-      box-shadow:0 8px 25px rgba(0,0,0,.12);
-    }
-
-    .section-title{
-      display:inline-block;
-      background:var(--green);
-      color:#fff;
-      padding:10px 22px;
-      border-radius:25px;
-      font-weight:700;
-      text-transform:uppercase;
-      font-size:.95rem;
-      margin-bottom:20px;
-    }
-
-    h3{color:var(--blue);margin:10px 0 15px}
-
-    details{
-      margin:18px 0;
-      background:#fff;
-      border-radius:8px;
-      overflow:hidden;
-      box-shadow:0 4px 15px rgba(0,0,0,.1);
-    }
-
-    summary{
-      cursor:pointer;
-      padding:18px 24px;
-      background:linear-gradient(135deg,var(--blue),#0066cc);
-      color:#fff;
-      font-weight:600;
-      text-transform:uppercase;
-      list-style:none;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    summary::after{content:"➕"}
-    details[open] summary::after{content:"➖"}
-
-    .details-body{
-      padding:25px 30px;
-      background:#fffdf6;
-    }
-
-    .details-body ul{list-style:none;margin-top:12px}
-
-    .details-body li{
-      padding-left:28px;
-      margin-bottom:10px;
-      position:relative;
-    }
-
-    .details-body li::before{
-      content:"✔";
-      position:absolute;
-      left:0;
-    }
-
-    .contacts{
-      text-align:center;
-      padding:30px;
-      background:#fff;
-      border-left:8px solid var(--blue);
-      border-radius:12px;
-    }
-
-    .posti-disponibili{
-      font-weight:700;
-      font-size:1.15rem;
-      color:var(--blue);
-      margin-bottom:15px;
-    }
-
-    .checkbox-container{
-      margin:25px 0;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      background:#fff6d6;
-      padding:20px;
-      border-radius:12px;
-      text-align:left;
-    }
-
-    .cta-buttons{
-      margin-top:20px;
-      display:flex;
-      gap:15px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:16px 28px;
-      border-radius:50px;
-      font-weight:700;
-      text-transform:uppercase;
-      color:#fff;
-      text-decoration:none;
-    }
-
-    .btn-whatsapp{background:#25d366}
-    .btn-call{background:var(--blue)}
-
-    footer{
-      background:#01294f;
-      color:#fff;
-      text-align:center;
-      padding:40px 20px;
-    }
-  </style>
+/* FOOTER */
+footer{
+  background:var(--blue-dark);
+  color:#fff;
+  text-align:center;
+  padding:18px;
+  font-size:.9rem;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="assets/img/homecheck-logo.png"
-       alt="HomeCheck – Controllo periodico seconda casa"
-       class="hero-logo">
-
+  <img src="assets/img/logo-homecheck.png" alt="Logo HomeCheck">
   <h1>HomeCheck</h1>
-  <h2>Controllo e verifica periodica dell’abitazione</h2>
-
-  <p>
-    Servizio locale per seconde case a Manduria e comuni limitrofi  
-    <br><strong>Fase pilota a numero chiuso</strong>
-  </p>
+  <h2>Controllo e verifica periodica</h2>
+  <p>Presenza locale affidabile per seconde case a Manduria e comuni limitrofi</p>
+  <p class="hero-note">Fase pilota a numero chiuso – accesso riservato</p>
 </header>
 
 <div class="container">
+<div class="card">
 
-  <!-- SERVIZIO -->
-  <div class="stripe">
-    <span class="section-title">Il Servizio</span>
+<section class="section">
+<span class="section-title">Il servizio HomeCheck</span>
 
-    <h3>Controllo e Presidio Professionale della Seconda Casa</h3>
+<p>
+HomeCheck è un servizio di controllo, verifica e cura periodica pensato per
+proprietari di seconde case che non vivono stabilmente a Manduria o nei comuni limitrofi.
+</p>
 
-    <p>
-      Il servizio è pensato per chi possiede una seconda casa ma non può essere presente
-      per controllarla regolarmente. Anche un immobile inutilizzato necessita di
-      attenzione per prevenire problemi e deterioramenti.
-    </p>
+<p>
+Una casa chiusa o utilizzata solo in alcuni periodi dell’anno tende a deteriorarsi
+anche senza eventi evidenti. Piccole anomalie, se non rilevate in tempo,
+possono trasformarsi in danni più seri e costosi.
+</p>
 
-    <details>
-      <summary>Perché è necessario un presidio regolare</summary>
-      <div class="details-body">
-        <ul>
-          <li>Rilevazione tempestiva di umidità o infiltrazioni</li>
-          <li>Prevenzione di accessi non autorizzati</li>
-          <li>Riduzione del deterioramento progressivo</li>
-          <li>Individuazione precoce di anomalie idrauliche o elettriche</li>
-        </ul>
-      </div>
-    </details>
+<p>
+HomeCheck garantisce una presenza locale affidabile che verifica lo stato
+dell’immobile, documenta ogni controllo e avvisa tempestivamente il proprietario
+in caso di anomalie, senza necessità di presenza fisica.
+</p>
 
-    <details>
-      <summary>Controllo Programmato</summary>
-      <div class="details-body">
-        <ul>
-          <li>1 controllo mensile concordato</li>
-          <li>Verifica porte, finestre e serrature</li>
-          <li>Controllo visivo di umidità e infiltrazioni</li>
-          <li>Aerazione degli ambienti</li>
-          <li>Report fotografico via WhatsApp</li>
-        </ul>
-      </div>
-    </details>
+<ul>
+  <li>Controlli programmati e documentati</li>
+  <li>Segnalazioni chiare e tempestive</li>
+  <li>Cura ordinaria degli ambienti</li>
+  <li>Preparazione della casa prima dell’arrivo</li>
+</ul>
 
-    <details>
-      <summary>Report e Comunicazioni</summary>
-      <div class="details-body">
-        <ul>
-          <li>Documentazione fotografica chiara</li>
-          <li>Descrizione sintetica dello stato dell’immobile</li>
-          <li>Segnalazione immediata di eventuali criticità</li>
-        </ul>
-      </div>
-    </details>
-  </div>
+<p>
+Il servizio non è vigilanza armata né sicurezza privata,
+ma un controllo umano concreto e continuativo.
+</p>
+</section>
 
-  <!-- SERVIZI EXTRA -->
-  <div class="stripe">
-    <span class="section-title">Servizi Extra</span>
+<span class="section-title">Pacchetti – Fase pilota (minimo 3 mesi)</span>
 
-    <p>
-      I servizi extra sono facoltativi, a pagamento e sempre concordati prima
-      dell’intervento.
-    </p>
+<details>
+<summary>Base – Piccole abitazioni</summary>
+<div class="pack-body">
+<p>Per appartamenti e case di piccole dimensioni chiuse per lunghi periodi.</p>
+<ul>
+  <li>1 controllo mensile</li>
+  <li>Aerazione completa locali</li>
+  <li>Verifica umidità e infiltrazioni</li>
+  <li>Controllo porte e finestre</li>
+  <li>Pulizia veloce e sistemazione</li>
+  <li>Report fotografico WhatsApp</li>
+</ul>
+<div class="price-compare">
+<strong>Fase pilota:</strong> 70 € / 3 mesi<br>
+<strong>Dopo la prova:</strong> 30 € / mese
+</div>
+</div>
+</details>
 
-    <details>
-      <summary>Servizi Disponibili</summary>
-      <div class="details-body">
-        <ul>
-          <li>Presenza per tecnici o artigiani</li>
-          <li>Accessi straordinari fuori calendario</li>
-          <li>Pulizie e preparazione abitazione</li>
-          <li>Gestione consegne o verifiche specifiche</li>
-        </ul>
-      </div>
-    </details>
-  </div>
+<details>
+<summary>Plus – Piccole villette</summary>
+<div class="pack-body">
+<p>Per villette indipendenti con spazi esterni e utilizzo stagionale.</p>
+<ul>
+  <li>Controllo mensile</li>
+  <li>Apertura e chiusura stagionale</li>
+  <li>Controllo interni ed esterni</li>
+  <li>1 pulizia pre-arrivo inclusa</li>
+  <li>Riordino generale</li>
+  <li>Presenza per tecnici (1/anno)</li>
+</ul>
+<div class="price-compare">
+<strong>Fase pilota:</strong> 150 € / 3 mesi<br>
+<strong>Dopo la prova:</strong> 60 € / mese
+</div>
+</div>
+</details>
 
-  <!-- REGOLAMENTO -->
-  <div class="stripe">
-    <span class="section-title">Regolamento</span>
+<details>
+<summary>Premium – Ville / piscine</summary>
+<div class="pack-body">
+<p>Soluzione completa per ville, giardini e piscine.</p>
+<ul>
+  <li>2 controlli mensili</li>
+  <li>Gestione stagionale completa</li>
+  <li>Pulizie pre-arrivo illimitate</li>
+  <li>Preparazione completa casa</li>
+  <li>Controllo visivo esterni e piscina</li>
+  <li>Presenza coordinata per tecnici</li>
+</ul>
+<div class="price-compare">
+<strong>Fase pilota:</strong> 190 € / 3 mesi<br>
+<strong>Dopo la prova:</strong> 80 € / mese
+</div>
+</div>
+</details>
 
-    <details>
-      <summary>Condizioni del Servizio</summary>
-      <div class="details-body">
-        <ul>
-          <li>Servizio di controllo e segnalazione, non sorveglianza continua</li>
-          <li>Nessuna manutenzione tecnica inclusa</li>
-          <li>Interventi solo previa autorizzazione</li>
-          <li>Area operativa entro 30 km da Manduria</li>
-          <li>Fase pilota limitata nel tempo e nei posti disponibili</li>
-        </ul>
-      </div>
-    </details>
+<section class="section">
+<span class="section-title">Servizi extra</span>
 
-    <details>
-      <summary>Accesso alle Abitazioni e Gestione Chiavi</summary>
-      <div class="details-body">
-        <ul>
-          <li>Accesso esclusivamente per attività autorizzate</li>
-          <li>Chiavi fornite dal proprietario o tramite cassetta di sicurezza</li>
-          <li>Possibile terzo fiduciario indicato dal proprietario</li>
-          <li>Ogni accesso è registrato e tracciato</li>
-        </ul>
-      </div>
-    </details>
-  </div>
+<details>
+<summary>Elenco servizi extra disponibili</summary>
+<div class="pack-body">
+<ul>
+  <li>Pulizie extra: 40 – 100 €</li>
+  <li>Preparazione frigo pre-arrivo: 20 – 40 €</li>
+  <li>Presenza su chiamata: 15 € / ora</li>
+  <li>Intervento urgente: 20 – 30 €</li>
+  <li>Consegna / ritiro chiavi: 10 – 15 €</li>
+  <li>Piccoli ripristini e sistemazioni</li>
+  <li>Piccoli lavori edili, elettrici e idrici (valutazione caso per caso)</li>
+</ul>
+<p>
+Ogni intervento extra viene sempre concordato preventivamente con il proprietario.
+</p>
+</div>
+</details>
+</section>
 
-  <!-- FAQ -->
-  <span class="section-title">FAQ – Domande Frequenti</span>
+<section class="section">
+<span class="section-title">Domande frequenti</span>
 
-  <details>
-    <summary>Il servizio è una sorveglianza continua?</summary>
-    <div class="details-body">
-      No. Sono previsti controlli programmati. Non è un servizio di vigilanza 24/7.
-    </div>
-  </details>
+<details>
+<summary>HomeCheck è un servizio di sicurezza?</summary>
+<div class="pack-body">
+No. È un servizio di controllo periodico e documentato,
+non vigilanza armata né sorveglianza continua.
+</div>
+</details>
 
-  <details>
-    <summary>Cosa succede se emerge un problema?</summary>
-    <div class="details-body">
-      Il problema viene segnalato con report fotografico. Ogni intervento viene concordato prima.
-    </div>
-  </details>
+<details>
+<summary>Cosa succede se rilevate un problema?</summary>
+<div class="pack-body">
+Il proprietario viene avvisato immediatamente con foto e descrizione.
+Ogni eventuale intervento viene concordato prima dell’esecuzione.
+</div>
+</details>
 
-  <details>
-    <summary>Posso richiedere accessi extra?</summary>
-    <div class="details-body">
-      Sì, tramite i Servizi Extra, sempre a pagamento e concordati anticipatamente.
-    </div>
-  </details>
+<details>
+<summary>Effettuate riparazioni?</summary>
+<div class="pack-body">
+Solo piccoli interventi di lieve entità, previa autorizzazione.
+Non vengono eseguiti lavori strutturali.
+</div>
+</details>
 
-  <details>
-    <summary>Il servizio include riparazioni?</summary>
-    <div class="details-body">
-      No. Il servizio non include manutenzioni o riparazioni professionali.
-    </div>
-  </details>
+<details>
+<summary>Il contratto è vincolante?</summary>
+<div class="pack-body">
+È previsto un minimo di 3 mesi per garantire continuità del servizio.
+Non è previsto rinnovo automatico.
+</div>
+</details>
+</section>
 
-  <!-- CONTATTI -->
-  <div class="contacts">
-    <p class="posti-disponibili" id="posti"></p>
+<div class="disclaimer">
+Il servizio non include vigilanza armata, sicurezza privata o gestione affitti.
+</div>
 
-    <div class="checkbox-container">
-      <input type="checkbox" id="accetto">
-      <label for="accetto">Confermo di aver letto e accettato il regolamento</label>
-    </div>
+<div class="contact-section">
+<h3>Per maggiori informazioni</h3>
+<p>Scrivici o chiamaci senza impegno per verificare disponibilità e pacchetto adatto.</p>
+<div class="cta-buttons">
+  <a class="btn btn-whatsapp" href="https://wa.me/393934425337" target="_blank">Scrivici su WhatsApp</a>
+  <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
+</div>
+</div>
 
-    <div class="cta-buttons">
-      <a class="btn btn-whatsapp" href="#" onclick="contatta()">WhatsApp</a>
-      <a class="btn btn-call" href="tel:+393934425337">Chiama</a>
-    </div>
-  </div>
-
+</div>
 </div>
 
 <footer>
-  <p>Gestione Seconde Case – Manduria</p>
-  <p>Fase pilota • Accesso limitato</p>
+HomeCheck – Manduria e comuni limitrofi
 </footer>
-
-<script>
-  const MAX_POSTI = 10;
-  const POSTI_OCCUPATI = 6;
-
-  document.getElementById("posti").textContent =
-    `Posti disponibili fase pilota: ${MAX_POSTI - POSTI_OCCUPATI} / ${MAX_POSTI}`;
-
-  function contatta(){
-    if(!document.getElementById("accetto").checked){
-      alert("Devi accettare il regolamento.");
-      return;
-    }
-    const msg = encodeURIComponent(
-      "Ciao, ho letto e accettato il regolamento. Vorrei candidarmi per la fase pilota."
-    );
-    window.open("https://wa.me/393934425337?text="+msg,"_blank");
-  }
-</script>
 
 </body>
 </html>
